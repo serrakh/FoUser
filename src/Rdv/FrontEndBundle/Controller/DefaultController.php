@@ -12,6 +12,7 @@ class DefaultController extends Controller
         $html = $this->get('twig')->render('@RdvFrontEnd/Default/template.html.twig');
 
 //        $html = file_get_contents('./', FILE_USE_INCLUDE_PATH);
+
         $html =  $this->parsePlatform($html,$family);
 
 
