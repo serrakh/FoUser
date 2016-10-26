@@ -1,0 +1,177 @@
+body {
+	padding-top: 300px !important;
+}
+
+
+#content,
+#mainContent,
+#resultList,
+#head,
+.container,
+.oneResult,
+.blockContent {
+	width: 100% !important;
+}
+
+.oneResultAtom {
+	display: block !important;
+	width: 100% !important;
+	text-align: center;
+}
+
+.container #head #block-search,
+.container,
+.container #content,
+.container #content #mainContent,
+.container #content #mainContent .blockContent,
+.blockContent {
+	margin: 0 !important;
+	padding: 0 !important;
+
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+#textlogo-ophtalmo,
+.socialButton {
+	display: none !important;
+}
+
+#block-ophtalmo {
+	margin-top: 5px !important;
+	width: 100% !important;
+}
+
+#footer {
+	padding: 0px !important;
+	text-align: center !important;
+}
+.container #head #block-ophtalmo a .logo-ophtalmo {
+	width: 100% !important;
+	padding: 5px !important;
+}
+.container #head #block-ophtalmo {
+	padding: 5px !important;
+}
+
+.logo-ophtalmo {
+	background-size: contain !important;
+}
+
+#head {
+	background: none !important;
+	background-color: #c4d7e4 !important;
+	width: 100% !important;
+}
+
+.container #head {
+	padding: 5px !important;
+	padding-bottom: 20px !important;
+
+}
+
+.container #head #block-search {
+	margin-top: 15px !important;
+	width: 100% !important;
+}
+
+
+.container #head #block-search span {
+	margin-top: 5px !important;
+	width: 100% !important;
+	display: block !important;
+	padding: 5px !important;
+}
+
+#topSearchJob,
+#topSearchPlace,
+#topSearchGo {
+	width: 100% !important;
+}
+
+.container #content #mainContent {
+	width: 100% !important;
+	min-height: auto !important;
+}
+
+#panCoords iframe {
+	width: 100% !important;
+}
+
+#infoMain {
+	width: 100% !important;
+}
+
+ul.nav li {
+	display: block !important;
+	width: 100% !important;
+	margin-top: 10px !important;
+}
+
+.container #resultContainer .oneResult .oneResultAtom h3 {
+	font-size: 24px !important;
+}
+
+.contactBtn,
+.meetBtn,
+.container #resultContainer .oneResult .oneResultAtom a.btn {
+	width: 100% !important;
+	display: block !important;
+	float: none !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
+nav,
+.navNextBtn,
+.navResultBtn {
+	display: none !important;
+}
+
+body.minimised {
+	padding-top: 100px !important;
+}
+
+
+
+body.minimised .container #head #block-ophtalmo {
+	display: inline-block !important;
+	width: 45% !important;
+}
+
+body.minimised .container #head #block-ophtalmo a .logo-ophtalmo {
+	width: 100% !important;
+	margin-top: 0 !important;
+	margin-left: 0 !important;
+}
+
+body.minimised .container #head #block-search {
+	display: none !important;
+}
+
+
+#launchTopSearch {
+	display: none;
+}
+
+body.minimised #launchTopSearch {
+	display: inline-block;
+	float: right;
+	margin-right: 5px;
+	margin-top: 5px;
+
+	padding: 10px 15px;
+
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+	-webkit-box-shadow: 2px 2px 10px 0 #909ca4;
+	box-shadow: 2px 2px 10px 0 #909ca4;
+
+	background-color: #005a96;
+
+	font-size: 16px;
+	font-weight: bold;
+	color: #ffffff;
+}

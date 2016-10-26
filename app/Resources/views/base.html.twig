@@ -1,13 +1,506 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
+        <!--  our web site -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
+
+        <meta property="og:title" content=">###PageTitle###" />
+        <meta property="og:url" content="http://www.ophtalmo.com/" />
+        <meta property="og:image" content="http://www.ophtalmo.com/pictures/card.jpg" />
+        <meta property="og:description" content="Ophtalmo.com | L'annuaire des spécialistes de la vision près de chez vous." />
+        <meta property="og:locale" content="fr_FR" />
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:url" content="http://www.ophtalmo.com/">
+        <meta name="twitter:title" content=">###PageTitle###">
+        <meta name="twitter:description" content="Ophtalmo.com | L'annuaire des spécialistes de la vision près de chez vous.">
+        <meta name="twitter:image" content="http://www.ophtalmo.com/pictures/card.jpg">
+
+
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- fontes -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+
+
+        <!-- other element -->
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}###PageTitle###{% endblock %}</title>
+        {% block stylesheets %}
+            <!-- Bootstrap -->
+            <link href="{{ asset('bundles/rdvfrontend/css/bootstrap.css') }}" rel="stylesheet">
+            <!-- ophtalmo -->
+            <link href="{{ asset('bundles/rdvfrontend/css/ophtalmocom.css') }}" rel="stylesheet">
+            <!--onlymobile-->
+            <link href="{{ asset('bundles/rdvfrontend/css/ophtalmocom.css') }}../../../../../../../ophtalmo.com/css/ophtalmomob.css" rel="stylesheet">
+            <!--/onlymobile-->
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block header %}
+            <div class="modal fade" tabindex="-1" role="dialog" id="displayInfo">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+
+
+                            <div id="infoMain" class="row">
+
+                                <div class="phImage col-xs-12 col-sm-3"></div>
+
+                                <div class="col-xs-12 col-sm-9">
+                                    <h2 id="infoName">Elbaz Pinto Eva</h2>
+                                    <h3 id="infopro">Opticien, Visionplus</h3>
+
+
+
+
+                                    <div>
+
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li role="Coordonnées" class="active"><a href="#panCoords" aria-controls="panCoords" role="tab" data-toggle="tab">Coordonnées</a></li>
+                                            <li role="presentation"><a href="#pratique" aria-controls="pratique" role="tab" data-toggle="tab">Pratique</a></li>
+                                            <li role="presentation"><a href="#experience" aria-controls="experience" role="tab" data-toggle="tab">Expérience</a></li>
+                                        </ul>
+
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="panCoords">
+                                                <p id="infoCoords">
+                                                    <b>SASU Vision plus</b>
+                                                    <br />
+                                                    Libéral
+                                                    <br />
+                                                    <br />
+                                                    <b>Adresse</b><br />
+                                                    139 r Paris
+                                                    <br />
+                                                    94220 CHARENTON LE PONT
+                                                    <br />
+                                                    <br />
+                                                    <b>Tél</b>
+                                                    <br />
+                                                    01 02 03 04 05
+                                                    <br />
+                                                    01 02 03 04 05 (secrétariat)
+                                                    <br />
+                                                    01 02 03 04 05 (fax)
+                                                    <br />
+                                                    <br />
+                                                    <a href="#">site internet</a>
+                                                    <br />
+                                                </p>
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2626.6515199512987!2d2.403797716083936!3d48.82671011089017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67259afee9b2d%3A0xe8a4aef0a5d00698!2s138+Rue+de+Paris%2C+94220+Charenton-le-Pont!5e0!3m2!1sfr!2sfr!4v1475504340704" width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="pratique">
+                                                <p>
+                                                    Accès mobilité réduite : oui
+                                                    <br />
+                                                    <br />
+                                                    <b>Santé</b>
+                                                    <br />
+                                                    Conventionné secteur 2
+                                                    <br />
+                                                    3 semaines en moyenne pour un rendez-vous
+                                                    <br />
+                                                    Carte vitale
+                                                    <br />
+                                                    <br />
+                                                    <b>Paiement</b>
+                                                    <br />
+                                                    Espèces, Chèque, Visa, Master
+                                                </p>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="experience">
+                                                <p>
+                                                    <b>Docteur en Médecine</b>
+                                                    <br />
+                                                    Faculté de Médecine, Descartes, Paris
+                                                    <br />
+                                                    Ancien interne des Hopitaux de Paris
+                                                    <br />
+                                                    Chirurgien
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="closeInfo" class="btn btn-default gotEyes" data-dismiss="modal"> Fermer</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+
+
+
+            <div class="navbar-fixed-top" id="topNav">
+
+
+                <div class="container">
+
+                    <div id="head" class="jumbotron">
+
+                        <a href="https://www.facebook.com" target="_blank" title="Retrouvez Ophtalmo.com sur facebook" class="socialButton">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x"></i>
+                </span>
+                            <span class="hidden">Retrouvez Ophtalmo.com sur facebook</span>
+                        </a>
+
+                        <a href="https://www.twitter.com" target="_blank" title="Retrouvez Ophtalmo.com sur twitter" class="socialButton">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x"></i>
+                </span>
+                            <span class="hidden">Retrouvez Ophtalmo.com sur twitter</span>
+                        </a>
+
+                        <a href="https://www.linkedin.com" target="_blank" title="Retrouvez Ophtalmo.com sur linkedin" class="socialButton">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x"></i>
+                </span>
+                            <span class="hidden">Retrouvez Ophtalmo.com sur linkedin</span>
+                        </a>
+
+
+                        <div id="block-ophtalmo">
+                            <a href="/" title="opthalmo.com, l'annuaire des spécialistes de la vision, près de chez vous. ">
+                                <div class="logo-ophtalmo">
+                                    <span class="hidden">ophtalmo.com</span>
+                                </div>
+                                <div id="textlogo-ophtalmo">
+                                    <b>L'annuaire</b> des
+                                    <br />
+                                    <b>spécialistes</b> de
+                                    <br />
+                                    la <b>vision</b> près
+                                    <br />
+                                    de chez vous.
+                                </div>
+                            </a>
+                        </div>
+
+
+                        <!--onlymobile-->
+                        <a href="#" class="" onclick="showSearch(); return false;" id="launchTopSearch">
+         <span class="gotEyes">
+            Recherche
+         </span>
+                        </a>
+
+                        <!--/onlymobile-->
+
+
+                        <div id="block-search" class="row">
+
+
+                <span class="col-xs-4 col-md-4 leftcol">
+                    <select id="topSearchJob" class="form-control" onChange="checkTopSearch();return false;">
+                        <option disabled selected>Spécialité ?</option>
+                        <option value="ophtalmo">Ophtalmos</option>
+                        <option value="orthoptiste">Orthoptistes</option>
+                        <option value="opticien">Opticiens</option>
+                    </select>
+                </span>
+
+                            <span class="col-xs-4 col-md-4 midcol">
+                    <input id="topSearchPlace" placeholder="Où ?" class="form-control" oninput="checkTopSearch(true);return false;">
+                </span>
+
+                            <span class="col-xs-4 col-md-4 rightcol">
+                    <button id="topSearchGo" class="form-control gotEyes btn" onClick="launchTopSearch(); return false;">&nbsp;Chercher</button>
+                </span>
+
+                        </div> <!-- block-search -->
+
+                    </div> <!-- header -->
+
+                </div> <!-- /container head-->
+
+            </div>
+
+
+            <!--nomobile-->
+            <div class="container">
+                <div id="menu" class="row">
+
+            <span class="col-xs-4 col-md-4 leftMenucol">
+                <a href="" class="btn btn-primary btn-lg btn-block">
+                    <span class="gotEyes">
+                        Annuaire des Ophtalmos
+                    </span>
+                </a>
+            </span>
+
+                    <span class="col-xs-4 col-md-4 midMenucol">
+                <a href="" class="btn btn-primary btn-lg btn-block">
+                    <span class="gotEyes">
+                        Annuaire des Orthoptistes
+                    </span>
+                </a>
+            </span>
+
+                    <span class="col-xs-4 col-md-4 rightMenucol">
+                <a href="" class="btn btn-primary btn-lg btn-block">
+                    <span class="gotEyes">
+                        Annuaire des Opticiens
+                    </span>
+                </a>
+            </span>
+                </div>
+            </div>
+
+            <!-- /container all content-->
+        {% endblock %}
+
+        {% block body %}
+
+        {% endblock %}
+
+        {% block footer %}
+
+            <!--nomobile-->
+            <div class="container">
+                <div id="footer" class="jumbotron">
+                    <div class="row">
+
+                        <div class="col-xs-6 col-md-3">
+                            <h3>
+                                Annuaire
+                                <br />
+                                des professionnels
+                            </h3>
+                            <ul>
+                                <li>
+                                    <a href="">
+                                        Annuaire ophtalmologues
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Annuaire orthoptistes
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Annuaire opticiens
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-xs-6 col-md-3">
+                            <h3>
+                                Annuaire
+                                <br />
+                                par région
+                            </h3>
+                            <ul>
+                                <li>
+                                    <a href="">
+                                        Alsace
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Ile-de-France
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        PACA
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Hauts de France
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Bretagne
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Corse
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Autres régions
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-xs-6 col-md-3">
+                            <h3>
+                                Annuaire
+                                <br />
+                                par ville
+                            </h3>
+                            <ul>
+                                <li>
+                                    <a href="">
+                                        Paris
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Marseille
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Lilles
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Lyon
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Avignon
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Bordeaux
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Strasbourg
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-xs-6 col-md-3">
+
+                            <div class="block-ophtalmo-white">
+                                <a href="/" title="opthalmo.com, l'annuaire des spécialistes de la vision, près de chez vous. ">
+                                    <div class="logo-ophtalmo-white">
+                                        <span class="hidden">opthalmo.com, l'annuaire des spécialistes de la vision, près de chez vous.</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="">
+                                        Presse
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Contact
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Mentions légales et CGU
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Plan du site
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa fa-facebook-square"></i> Facebook
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa fa-twitter-square"></i> Twitter
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa fa-linkedin-square"></i>  LinkedIn
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--/nomobile-->
+
+            <!--onlymobile-->
+            <div class="container">
+                <div id="footer" class="jumbotron">
+                    <div class="row">
+
+                        <div class="col-xs-12">
+                            <ul>
+                                <li>
+                                    <a href="">
+                                        Annuaire ophtalmologues
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Annuaire orthoptistes
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Annuaire opticiens
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Mentions légales
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--/onlymobile-->
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="../../../../../../../ophtalmo.com/js/bootstrap.js"></script>
+            <script src="../../../../../../../ophtalmo.com/js/bootstrap-slider.js"></script>
+            <script src="../../../../../../../ophtalmo.com/js/ophtalmocom.js"></script>
+        {% endblock %}
     </body>
 </html>
