@@ -42,7 +42,7 @@
             <!-- ophtalmo -->
             <link href="{{ asset('bundles/rdvfrontend/css/ophtalmocom.css') }}" rel="stylesheet">
             <!--onlymobile-->
-            <link href="{{ asset('bundles/rdvfrontend/css/ophtalmocom.css') }}../../../../../../../ophtalmo.com/css/ophtalmomob.css" rel="stylesheet">
+            <link href="{{ asset('bundles/rdvfrontend/css/ophtalmomob.css') }}" rel="stylesheet">
             <!--/onlymobile-->
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
@@ -498,9 +498,9 @@
 
         {% block javascripts %}
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-            <script src="../../../../../../../ophtalmo.com/js/bootstrap.js"></script>
-            <script src="../../../../../../../ophtalmo.com/js/bootstrap-slider.js"></script>
-            <script src="../../../../../../../ophtalmo.com/js/ophtalmocom.js"></script>
+            <script src="{{ asset("bundles/rdvfrontend/js/bootstrap.js") }}"></script>
+            <script src="{{ asset("bundles/rdvfrontend/js/bootstrap-slider.js") }}"></script>
+            <script src="{{ asset("bundles/rdvfrontend/js/ophtalmocom.js") }}"></script>
         {% endblock %}
     </body>
 </html>

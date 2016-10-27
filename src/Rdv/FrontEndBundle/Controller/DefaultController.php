@@ -15,7 +15,6 @@ class DefaultController extends Controller
 
         $html =  $this->parsePlatform($html,$family);
 
-
         return $this->render('RdvFrontEndBundle:Default:index.html.twig' , [
             'html' => $html
         ]);
