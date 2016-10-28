@@ -502,6 +502,13 @@
             <script src="{{ asset("bundles/rdvfrontend/js/bootstrap-slider.js") }}"></script>
             <script src="{{ asset("bundles/rdvfrontend/js/ophtalmocom.js") }}"></script>
 			<script src="{{ asset("bundles/rdvfrontend/js/autoComp.js") }}"></script> 
+			<script type="text/javascript"> 
+			.pac-container, .pac-item {
+				z-index: 10000 !important;
+				position: relative;
+			}
+}
+			</script>
         {% endblock %}
     </body>
 	
