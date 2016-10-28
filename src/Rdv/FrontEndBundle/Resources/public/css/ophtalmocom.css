@@ -1352,6 +1352,10 @@ input#chooseCity.active:-moz-placeholder { /* Firefox 18- */
   border-top-color: #0b72b5;
 }
 
+.pac-container, .pac-item {
+   z-index: 10000 !important;
+}
+
 
 
 

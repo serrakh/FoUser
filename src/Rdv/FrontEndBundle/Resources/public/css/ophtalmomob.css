@@ -175,3 +175,7 @@ body.minimised #launchTopSearch {
 	font-weight: bold;
 	color: #ffffff;
 }
+
+.pac-container, .pac-item {
+	z-index: 10000 !important;
+}
