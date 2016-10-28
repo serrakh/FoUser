@@ -1353,8 +1353,11 @@ input#chooseCity.active:-moz-placeholder { /* Firefox 18- */
 }
 
 .pac-container, .pac-item {
-   z-index: 10000 !important;
+	z-index: 10000 !important;
+	
 }
+
+
 
 
 

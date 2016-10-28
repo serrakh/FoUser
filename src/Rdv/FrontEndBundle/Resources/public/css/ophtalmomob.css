@@ -178,4 +178,6 @@ body.minimised #launchTopSearch {
 
 .pac-container, .pac-item {
 	z-index: 10000 !important;
+	
 }
+
