@@ -31,8 +31,7 @@
 
         <!-- fontes -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
-
-
+        
         <!-- other element -->
         <meta charset="UTF-8" />
         <title>{% block title %}###PageTitle###{% endblock %}</title>
@@ -498,9 +497,12 @@
 
         {% block javascripts %}
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+			<script src="https://maps.googleapis.com/maps/api/js?v3.exp&signed_intrue&libraries=places"> </script>
             <script src="{{ asset("bundles/rdvfrontend/js/bootstrap.js") }}"></script>
             <script src="{{ asset("bundles/rdvfrontend/js/bootstrap-slider.js") }}"></script>
             <script src="{{ asset("bundles/rdvfrontend/js/ophtalmocom.js") }}"></script>
+			<script src="{{ asset("bundles/rdvfrontend/js/autoComp.js") }}"></script> 
         {% endblock %}
     </body>
+	
 </html>
