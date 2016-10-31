@@ -8,9 +8,12 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
+ * @ORM\InheritanceType("JOINED")
+ * @ORM\DiscriminatorColumn(name="usertype", type="string")
+ * @ORM\DiscriminatorMap({"patient" = "Patient", "opticien" = "Opticien"})
  * @ORM\Table(name="utilisateur")
  */
-class User extends BaseUser
+abstract class User extends BaseUser
 {
     /**
      * @ORM\Id

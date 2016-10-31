@@ -2,10 +2,15 @@
 
 namespace Rdv\FrontEndBundle\Controller;
 
+use Rdv\FrontEndBundle\Entity\Patient;
+use Rdv\FrontEndBundle\Form\PatientType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
+
     public function indexAction()
     {
         $family=$this->getFamily();
@@ -18,6 +23,7 @@ class DefaultController extends Controller
         return $this->render('RdvFrontEndBundle:Default:index.html.twig' , [
             'html' => $html
         ]);
+
     }
 
     function getFamily() {
@@ -113,5 +119,22 @@ class DefaultController extends Controller
             }
         }
         return $html;
+    }
+
+    public function registerPatientAction(Request $request){
+        $em = $this->getDoctrine()->getEntityManager();
+        $patient = new Patient();
+        $form = $this->createForm(new PatientType() , $patient);
+        $form->handleRequest($request);
+        if ($form->isValid()) {
+            $patient->addRole('ROLE_USER');
+            $patient->setEnabled(true);
+            $em->persist($patient);
+            $em->flush();
+            return new Response("perfect !!!");
+        }
+        return $this->render('@RdvFrontEnd/Default/register.patient.html.twig',[
+            'form' => $form->createView(),
+        ]);
     }
 }

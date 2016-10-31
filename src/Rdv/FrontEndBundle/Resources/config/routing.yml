@@ -1,3 +1,7 @@
 rdv_front_end_homepage:
     path:     /
     defaults: { _controller: RdvFrontEndBundle:Default:index }
+
+rdv_front_end_register_patient:
+    path:     /registerPatient
+    defaults: { _controller: RdvFrontEndBundle:Default:registerPatient }
