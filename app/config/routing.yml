@@ -2,5 +2,6 @@ rdv_front_end:
     resource: "@RdvFrontEndBundle/Resources/config/routing.yml"
     prefix:   /
 
-fos_user:
-    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+rdv_routing_fos:
+    resource: "@RdvFrontEndBundle/Resources/config/routing_fos.yml"
+    prefix:   /
