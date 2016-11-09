@@ -493,11 +493,14 @@
                 </div>
             </div>
             <!--/onlymobile-->
+
+
         {% endblock %}
+
 
         {% block javascripts %}
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-			<script src="https://maps.googleapis.com/maps/api/js?v3.exp&signed_intrue&libraries=places"> </script>
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc9JMPOkbUKEvXzAWG5n9CHUgcGQardx4&signed_in=true&libraries=places&callback=initAutocomplete"> </script>
             <script src="{{ asset("bundles/rdvfrontend/js/bootstrap.js") }}"></script>
             <script src="{{ asset("bundles/rdvfrontend/js/bootstrap-slider.js") }}"></script>
             <script src="{{ asset("bundles/rdvfrontend/js/ophtalmocom.js") }}"></script>

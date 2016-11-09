@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\InheritanceType("JOINED")
  * @ORM\DiscriminatorColumn(name="usertype", type="string")
- * @ORM\DiscriminatorMap({"patient" = "Patient", "opticien" = "Opticien"})
+ * @ORM\DiscriminatorMap({"patient" = "Patient", "opticien" = "Opticien" , "professionnel" = "Professionnel"})
  * @ORM\Table(name="utilisateur")
  */
 abstract class User extends BaseUser
@@ -22,9 +22,4 @@ abstract class User extends BaseUser
      */
     protected $id;
 
-    public function __construct()
-    {
-        parent::__construct();
-        // your own logic
-    }
 }

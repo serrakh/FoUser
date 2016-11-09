@@ -1,0 +1,31 @@
+<body>
+
+<h2>Page Accueil</h2>
+
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username ,}, 'FOSUserBundle') }} |
+    <a href="{{ path('fos_user_security_logout') }}">
+        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+    </a>
+
+    {% if is_granted('ROLE_OPTICIEN') %}
+        OPTICIEN
+    {% else %}
+        {% if is_granted('ROLE_PATIENT') %}
+            PATIENT
+        {% else %}
+            {% if is_granted('ROLE_PROFESSIONNEL') %}
+                PROFESSIONNEL
+            {% endif %}
+            {% endif %}
+    {% endif %}
+{% else %}
+    <a href="{{ path('rdv_front_end_patient') }}">Patient</a><br>
+
+    <a href="{{ path('rdv_front_end_opticien') }}">Opticien</a><br>
+
+    <a href="{{ path('rdv_front_end_professionnel') }}">professionnel</a><br>
+{% endif %}
+
+
+</body>

@@ -26,6 +26,11 @@ class OpticienType extends AbstractType
         ));
     }
 
+    public function getParent()
+    {
+        return 'fos_user_registration';
+    }
+
     /**
      * {@inheritdoc}
      */

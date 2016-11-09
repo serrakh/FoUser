@@ -5,12 +5,12 @@ namespace Rdv\FrontEndBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Opticien
+ * Professionnel
  *
- * @ORM\Table(name="opticien")
- * @ORM\Entity(repositoryClass="Rdv\FrontEndBundle\Repository\OpticienRepository")
+ * @ORM\Table(name="professionnel")
+ * @ORM\Entity(repositoryClass="Rdv\FrontEndBundle\Repository\ProfessionnelRepository")
  */
-class Opticien extends User
+class Professionnel extends User
 {
     /**
      * @var int
@@ -24,19 +24,17 @@ class Opticien extends User
     /**
      * @var string
      *
-     * @ORM\Column(name="status", type="string", length=255)
+     * @ORM\Column(name="nomCommercial", type="string", length=255)
      */
-    private $status;
-
+    private $nomCommercial;
 
     /**
-     * Opticien constructor.
+     * Professionnel constructor.
      */
     public function __construct()
     {
         parent::__construct();
     }
-
 
     /**
      * Get id
@@ -49,27 +47,27 @@ class Opticien extends User
     }
 
     /**
-     * Set status
+     * Set nomCommercial
      *
-     * @param string $status
+     * @param string $nomCommercial
      *
-     * @return Opticien
+     * @return Professionnel
      */
-    public function setStatus($status)
+    public function setNomCommercial($nomCommercial)
     {
-        $this->status = $status;
+        $this->nomCommercial = $nomCommercial;
 
         return $this;
     }
 
     /**
-     * Get status
+     * Get nomCommercial
      *
      * @return string
      */
-    public function getStatus()
+    public function getNomCommercial()
     {
-        return $this->status;
+        return $this->nomCommercial;
     }
 }
 

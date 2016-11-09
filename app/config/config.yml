@@ -70,6 +70,3 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: Rdv\FrontEndBundle\Entity\User
-    registration:
-            form:
-                type: rdv_patient_registration

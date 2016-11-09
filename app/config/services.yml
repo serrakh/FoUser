@@ -4,7 +4,3 @@ parameters:
 #    parameter_name: value
 
 services:
-    rdvuser.form.registration:
-        class: Rdv\FrontEndBundle\Form\PatientType
-        tags:
-            - { name: form.type, alias: rdv_patient_registration }

@@ -24,7 +24,7 @@ class Patient extends User
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateNaissance", type="datetimetz", nullable=true)
+     * @ORM\Column(name="dateNaissance", type="date", nullable=true)
      */
     private $dateNaissance;
 
@@ -71,4 +71,3 @@ class Patient extends User
         return $this->dateNaissance;
     }
 }
-

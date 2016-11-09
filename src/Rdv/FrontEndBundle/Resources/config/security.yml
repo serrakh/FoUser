@@ -7,7 +7,7 @@ security:
 
     firewalls:
         dev:
-            pattern: ^/(_(profiler|wdt))/
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
         main:
@@ -19,7 +19,7 @@ security:
                 use_forward: false
                 check_path: fos_user_security_check
                 failure_path: null
-                default_target_path: /
+                default_target_path: /test
                 remember_me: true
             remember_me:
                 key:      "%secret%"
@@ -28,6 +28,6 @@ security:
                 domain:  -
             logout:
                 path: fos_user_security_logout
-                target:       /
+                target:   /test
             form_login:
             anonymous:    true

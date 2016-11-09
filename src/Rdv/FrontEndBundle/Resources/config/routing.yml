@@ -2,6 +2,19 @@ rdv_front_end_homepage:
     path:     /
     defaults: { _controller: RdvFrontEndBundle:Default:index }
 
-rdv_front_end_register_patient:
-    path:     /registerPatient
-    defaults: { _controller: RdvFrontEndBundle:Default:registerPatient }
+rdv_front_end_test:
+    path:     /test
+    defaults: { _controller: RdvFrontEndBundle:Default:test }
+
+#Se faire inscrire par Opticien, Patient, Professionel
+rdv_front_end_patient:
+    path:     /patient
+    defaults: { _controller: RdvFrontEndBundle:Default:patient }
+
+rdv_front_end_opticien:
+    path:     /opticien
+    defaults: { _controller: RdvFrontEndBundle:Default:opticien }
+
+rdv_front_end_professionnel:
+    path:     /professionnel
+    defaults: { _controller: RdvFrontEndBundle:Default:professionel }

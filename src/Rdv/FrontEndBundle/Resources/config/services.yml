@@ -1,4 +1,0 @@
-services:
-#    rdv_front_end.example:
-#        class: Rdv\FrontEndBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
