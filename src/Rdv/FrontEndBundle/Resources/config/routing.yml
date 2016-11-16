@@ -18,3 +18,8 @@ rdv_front_end_opticien:
 rdv_front_end_professionnel:
     path:     /professionnel
     defaults: { _controller: RdvFrontEndBundle:Default:professionel }
+
+#Envoyer un mail
+rdv_front_end_sendmail:
+    path:     /sendmail
+    defaults: { _controller: RdvFrontEndBundle:Default:sendMail }

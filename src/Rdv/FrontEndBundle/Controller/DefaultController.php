@@ -18,6 +18,25 @@ use Symfony\Component\Security\Core\SecurityContext;
 class DefaultController extends Controller
 {
 
+    public function sendMailAction(){
+
+        $message = \Swift_Message::newInstance()
+            ->setSubject('Hello Email')
+            ->setFrom('htm.serrakh@gmail.com')
+            ->setTo('htm.serrakh@gmail.com')
+            ->setBody(
+                $this->renderView(
+                    '@RdvFrontEnd/Emails/registration.html.twig',
+                    array('name' => 'hatim')
+                ),
+                'text/html'
+            )
+        ;
+        $this->get('mailer')->send($message);
+
+        return new Response('Okey !! ');
+    }
+
     public function opticienAction(Request $request)
     {
 
