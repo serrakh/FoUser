@@ -18,7 +18,8 @@ use Symfony\Component\Security\Core\SecurityContext;
 class DefaultController extends Controller
 {
 
-    public function sendMailAction(){
+    public function sendMailAction()
+    {
 
         $message = \Swift_Message::newInstance()
             ->setSubject('Hello Email')
@@ -30,8 +31,7 @@ class DefaultController extends Controller
                     array('name' => 'hatim')
                 ),
                 'text/html'
-            )
-        ;
+            );
         $this->get('mailer')->send($message);
 
         return new Response('Okey !! ');
@@ -89,7 +89,7 @@ class DefaultController extends Controller
         return $this->render('@RdvFrontEnd/Default/opticien.html.twig', [
             'form' => $form->createView(),
             'last_username' => $lastUsername,
-            'error'         => $error,
+            'error' => $error,
             'csrf_token' => $csrfToken,
         ]);
     }
@@ -146,7 +146,7 @@ class DefaultController extends Controller
         return $this->render('@RdvFrontEnd/Default/patient.html.twig', [
             'form' => $form->createView(),
             'last_username' => $lastUsername,
-            'error'         => $error,
+            'error' => $error,
             'csrf_token' => $csrfToken,
         ]);
 
@@ -205,7 +205,7 @@ class DefaultController extends Controller
         return $this->render('@RdvFrontEnd/Default/professionnel.html.twig', [
             'form' => $form->createView(),
             'last_username' => $lastUsername,
-            'error'         => $error,
+            'error' => $error,
             'csrf_token' => $csrfToken,
         ]);
 

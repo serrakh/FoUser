@@ -10,6 +10,36 @@ body {
   padding-top: 350px;
 }
 
+.cookie_btn{
+  display: inline;
+  margin-left: 15px;
+  background-color: #55acee;
+  padding: 4px 10px;
+  border-radius: 5px;
+  color: #FFF;
+}
+
+.cookie{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 7px 20px;
+  color: #666;
+  font-size: 0.9em;
+  background-color: #f2f2f2;
+  border-top: 1px solid #e4e4e4;
+}
+.cookie a{
+  text-decoration: underline;
+}
+
+.cookie a:hover{
+  text-decoration: none;
+}
+
+
+
 a:hover {
   text-decoration: none;
 }

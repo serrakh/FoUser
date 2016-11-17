@@ -3,7 +3,7 @@ security:
         FOS\UserBundle\Model\UserInterface: bcrypt
     providers:
         fos_userbundle:
-            id: fos_user.user_provider.username
+            id: fos_user.user_provider.username_email
 
     firewalls:
         dev:
