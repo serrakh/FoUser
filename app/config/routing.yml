@@ -5,3 +5,5 @@ rdv_front_end:
 rdv_routing_fos:
     resource: "@RdvFrontEndBundle/Resources/config/routing_fos.yml"
     prefix:   /
+fos_user_profile_show:
+    path: /

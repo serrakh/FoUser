@@ -3,8 +3,15 @@
 
 namespace Rdv\FrontEndBundle\Entity;
 
+
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
 
 /**
  * @ORM\Entity
@@ -22,4 +29,21 @@ abstract class User extends BaseUser
      */
     protected $id;
 
+
+    public function setEmail($email)
+    {
+
+        parent::setEmail($email);
+        $this->setUsername($email);
+        return $this;
+    }
+
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    {
+
+        $metadata->addPropertyConstraint('email', new Email());
+        $metadata->addPropertyConstraint('email', new NotBlank());
+        $metadata->addPropertyConstraint('plainPassword', new NotBlank());
+        $metadata->addPropertyConstraint('plainPassword', new Length( array( 'min' => 5) ));
+    }
 }

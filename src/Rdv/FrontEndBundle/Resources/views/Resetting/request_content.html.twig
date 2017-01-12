@@ -1,11 +1,52 @@
+{% extends "::base.html.twig" %}
 {% trans_default_domain 'FOSUserBundle' %}
 
-<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
-    <div>
-        <label for="username">{{ 'resetting.request.username'|trans }}</label>
-        <input type="text" id="username" name="username" required="required" />
+
+{% block header %} {{ parent() }} {% endblock %}
+
+{% block body %}
+    <div class="div-center">
+        <div class="titre-text">
+
+            <h3>
+                Connectez-vous et accédez à votre Espace
+            </h3>
+
+
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <ul class="nav nav-tabs" id="myTab">
+                    <li class="active">
+                        <a data-target="#Rpwd" data-toggle="tab">Réinitialisation de mot de passe</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="Rpwd">
+                        <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+                            <div class="form-group col-xs-12" >
+                                <label for="email" >Saisissez votre e-mail :</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="E-mail" required="required" />
+                            </div>
+                            <div class="row center">
+                                <div class="col-md-6 col-lg-push-3">
+                                    <br>
+                                    <input type="submit" class="btn btn-success form-control" id="_submit" name="_submit" value="Envoyer" />
+                                </div>
+                            </div>
+
+                        </form></div>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div>
-        <input type="submit" value="{{ 'resetting.request.submit'|trans }}" />
-    </div>
-</form>
+
+
+
+
+{% endblock %}
+{% block footer %} {{ parent() }} {% endblock %}
+
+

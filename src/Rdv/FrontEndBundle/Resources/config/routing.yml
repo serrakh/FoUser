@@ -8,15 +8,17 @@ rdv_front_end_test:
 
 #Se faire inscrire par Opticien, Patient, Professionel
 rdv_front_end_patient:
-    path:     /patient
+    path:     /patient/login
     defaults: { _controller: RdvFrontEndBundle:Default:patient }
-
+rdv_front_end_login:
+    path:     /login
+    defaults: { _controller: RdvFrontEndBundle:Default:login }
 rdv_front_end_opticien:
-    path:     /opticien
+    path:     /opticien/login
     defaults: { _controller: RdvFrontEndBundle:Default:opticien }
 
 rdv_front_end_professionnel:
-    path:     /professionnel
+    path:     /professionnel/login
     defaults: { _controller: RdvFrontEndBundle:Default:professionel }
 
 #Envoyer un mail

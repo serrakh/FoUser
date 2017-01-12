@@ -1,0 +1,319 @@
+{% extends "::base.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{% block header %} {{ parent() }} {% endblock %}
+
+{% block body %}
+    <div class="div-center">
+        <div class="titre-text">
+            {%   if utilisateur=="patient" %}
+                <h3>
+                    Connectez-vous et accédez à votre espace patient
+                </h3>
+            {%  elseif utilisateur=="opticien"  %}
+
+                <h3>
+                    Connectez-vous et accédez à votre espace opticien
+                </h3>
+            {% else %}
+                <h3>
+                    Connectez-vous et accédez à votre espace professionnel
+                </h3>
+
+            {% endif %}
+
+        </div>
+        <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+        <ul class="nav nav-tabs" id="myTab">
+            <li id="inscrire-nav">
+                <a data-target="#inscrire" data-toggle="tab">S'inscrire</a>
+            </li >
+            <li id="connecter_nav "class="active">
+                <a data-target="#connecter" data-toggle="tab">Se connecter</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane" id="inscrire">
+
+                {%   if utilisateur=="patient" %}
+                <form method="POST" action="{{ path('rdv_front_end_patient') }}" novalidate>
+                    {% if (msg_erreur is defined) %}
+                    <div class="alert alert-danger text-center">
+                        <strong>  {{ msg_erreur|raw }}</strong>
+                    </div>
+                    {% endif %}
+                        <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group {% if not form.nom.vars.valid %}has-error{% endif %}">
+                            <label for="nom">Nom</label>
+                            {{ form_widget(form.nom, { 'attr': {'class': 'form-control input-sm','placeholder': 'Nom'} }) }}
+                            {{ form_errors(form.nom) }}
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <label for="Prenom">Prénom</label>
+                        <div class="form-group {% if not form.prenom.vars.valid %}has-error{% endif %}">
+                            {{ form_widget(form.prenom, { 'attr': {'class': 'form-control input-sm','placeholder': 'Prénom'} }) }}
+                            {{ form_errors(form.prenom) }}
+                        </div>
+                    </div>
+                        </div>
+                    <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group {% if not form.email.vars.valid %}has-error{% endif %}">
+                            <label for="email">Email</label>
+                            {{ form_widget(form.email, { 'attr': {'class': 'form-control input-sm','placeholder': 'Email'}}) }}
+                            {{ form_errors(form.email) }}
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group {% if not form.civilisation.vars.valid %}has-error{% endif %}">
+                            <label for="civilisation">Je suis un(e)</label>
+                            {{ form_widget(form.civilisation, { 'attr': {'class': 'form-control input-sm','placeholder': 'Civilisation'} }) }}
+                            {{ form_errors(form.civilisation) }}
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group {% if not form.dateNaissance.vars.valid %}has-error{% endif %}">
+                            <label for="DateNaissance">Date Naissance</label>
+                            {{ form_widget(form.dateNaissance, { 'attr': {'class': 'input-sm','placeholder': 'Date Naissance'} }) }}
+                            {{ form_errors(form.dateNaissance) }}
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group {% if not form.telephone.vars.valid %}has-error{% endif %}">
+                            <label for="mobile">Numéro du mobile</label>
+                            {{ form_widget(form.telephone, { 'attr': {'class': 'form-control input-sm','placeholder': 'Numéro de mobile'} }) }}
+                            {{ form_errors(form.telephone) }}
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <div class="form-group {% if not form.plainPassword.first.vars.valid %}has-error{% endif %}">
+                                <label for="MotDePasse">Mot de passe</label>
+                                {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control input-sm','placeholder': 'Mot de passe'} }) }}
+                                {{ form_errors(form.plainPassword.first) }}
+
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <div class="form-group {% if not form.plainPassword.second.vars.valid %}has-error{% endif %}">
+                                <label for="ConfirmerMotDePasse">Confirmer Mot de passe</label>
+                                {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control input-sm','placeholder': 'Confirmer le mot de passe'} }) }}
+                                {{ form_errors(form.plainPassword.second) }}
+                            </div>
+                        </div>
+                        </div>
+                    <div class="row">
+                    <div class="col-md-4 col-md-push-6">
+                        <div class="form-group">
+                            <input type="submit" value="Valider" class="btn btn-success btn-block">
+                            {{ form_widget(form._token) }}
+                        </div>
+                    </div>
+                    </div>
+
+                </form>
+                {%  elseif utilisateur=="opticien"  %}
+                    <form method="POST" action="{{ path('rdv_front_end_opticien') }}" novalidate>
+                        {% if (msg_erreur is defined) %}
+                            <div class="alert alert-danger text-center">
+                                <strong>  {{ msg_erreur|raw }}</strong>
+                            </div>
+                        {% endif %}
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group {% if not form.responsable.vars.valid %}has-error{% endif %}">
+                                    <label for="responsable">Vous êtes</label>
+                                    {{ form_widget(form.responsable, { 'attr': {'class': 'form-control input-sm'} }) }}
+                                    {{ form_errors(form.responsable) }}
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <label for="civilisation">Je suis un(e)</label>
+                                <div class="form-group {% if not form.civilisation.vars.valid %}has-error{% endif %}">
+                                    {{ form_widget(form.civilisation, { 'attr': {'class': 'form-control input-sm'} }) }}
+                                    {{ form_errors(form.civilisation) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group {% if not form.nom.vars.valid %}has-error{% endif %}">
+                                    <label for="nom">Nom</label>
+                                    {{ form_widget(form.nom, { 'attr': {'class': 'form-control input-sm','placeholder': 'Nom'} }) }}
+                                    {{ form_errors(form.nom) }}
+
+                                </div>
+                            </div>
+
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <label for="Prenom">Prénom</label>
+                                <div class="form-group {% if not form.prenom.vars.valid %}has-error{% endif %}">
+                                    {{ form_widget(form.prenom, { 'attr': {'class': 'form-control input-sm','placeholder': 'Prénom'} }) }}
+                                    {{ form_errors(form.prenom) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group {% if not form.email.vars.valid %}has-error{% endif %}">
+                                    <label for="email">Email</label>
+                                    {{ form_widget(form.email, { 'attr': {'class': 'form-control input-sm','placeholder': 'Email'}}) }}
+                                    {{ form_errors(form.email) }}
+                                </div>
+                            </div>
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group {% if not form.telephone.vars.valid %}has-error{% endif %}">
+                                    <label for="Telephone">Telephone</label>
+                                    {{ form_widget(form.telephone, { 'attr': {'class': 'form-control input-sm','placeholder': 'Telephone'} }) }}
+                                    {{ form_errors(form.telephone) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group {% if not form.nomMagasin.vars.valid %}has-error{% endif %}">
+                                    <label for="Nom du magasin">Nom du magasin </label>
+                                    {{ form_widget(form.nomMagasin, { 'attr': {'class': 'input-sm','placeholder': 'Nom du magasin'} }) }}
+                                    {{ form_errors(form.nomMagasin ) }}
+                                </div>
+                            </div>
+
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group {% if not form.telMagasin.vars.valid %}has-error{% endif %}">
+                                    <label for="Tel du magasin">Tél du magasin</label>
+                                    {{ form_widget(form.telMagasin, { 'attr': {'class': 'form-control input-sm','placeholder': 'Tél du magasin'} }) }}
+                                    {{ form_errors(form.telMagasin) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group {% if not form.adresse.vars.valid %}has-error{% endif %}">
+                                    <label for="Adresse">Adresse</label>
+                                    {{ form_widget(form.adresse, { 'attr': {'class': 'form-control input-sm','placeholder': 'Adresse'} }) }}
+                                    {{ form_errors(form.adresse) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group {% if not form.ville.vars.valid %}has-error{% endif %}">
+                                    <label for="Ville ">Ville</label>
+                                    {{ form_widget(form.ville, { 'attr': {'class': 'input-sm','placeholder': 'Ville'} }) }}
+                                    {{ form_errors(form.ville ) }}
+                                </div>
+                            </div>
+
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group {% if not form.codePostal.vars.valid %}has-error{% endif %}">
+                                    <label for="Code postal">Code Postal</label>
+                                    {{ form_widget(form.codePostal, { 'attr': {'class': 'form-control input-sm','placeholder': 'Code postal'} }) }}
+                                    {{ form_errors(form.codePostal) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group {% if not form.plainPassword.first.vars.valid %}has-error{% endif %}">
+                                    <label for="MotDePasse">Mot de passe</label>
+                                    {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control input-sm','placeholder': 'Mot de passe'} }) }}
+                                    {{ form_errors(form.plainPassword.first) }}
+
+                                </div>
+                            </div>
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group {% if not form.plainPassword.second.vars.valid %}has-error{% endif %}">
+                                    <label for="ConfirmerMotDePasse">Confirmer Mot de passe</label>
+                                    {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control input-sm','placeholder': 'Confirmer le mot de passe'} }) }}
+                                    {{ form_errors(form.plainPassword.second) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-push-6">
+                                <div class="form-group">
+                                    <input type="submit" value="Valider" class="btn btn-success btn-block">
+                                    {{ form_widget(form._token) }}
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                {% else %}
+
+
+                {% endif %}
+
+            </div>
+            <div class="tab-pane active in" id="connecter"><form action="{{ path("fos_user_security_check") }}" method="post">
+                    {% if csrf_token %}
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                    {% endif %}
+                    <div class="form-group col-xs-12 text-center" >
+                    {% if error %}
+                        <div class="alert alert-danger">
+                            <strong>L'adresse e-mail ou le mot de passe que vous avez entré n'est pas valide !</strong>
+                        </div>
+                    {% endif %}
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6" >
+                    <label for="username">Email</label>
+                    <input type="text" class="form-control" id="username" name="_username" placeholder="Email" required="required" />
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6" >
+                    <label for="password">Mot de passe</label>
+                    <input type="password" placeholder="Mot de passe" class="form-control" id="password" name="_password" required="required" />
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6" >
+                        <a href="{{ path("fos_user_resetting_check_email") }}">Mot de passe oublié ?</a>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6" >
+                        <a href="#">Votre email / numéro de téléphone portable a changé ?</a>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-4 col-md-push-6" >
+                    <input type="submit" class="btn btn-success form-control" id="_submit" name="_submit" value="Connexion" />
+                    </div>
+                    </div>
+
+                </form></div>
+        </div>
+
+        </div>
+        </div>
+    </div>
+
+
+    {% if (js is defined) %}{{ js|raw }}{% endif %}
+
+{% endblock %}
+{% block footer %} {{ parent() }} {% endblock %}
+
+
+

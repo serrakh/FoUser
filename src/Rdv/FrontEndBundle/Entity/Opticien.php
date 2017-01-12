@@ -3,6 +3,8 @@
 namespace Rdv\FrontEndBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Opticien
@@ -21,12 +23,77 @@ class Opticien extends User
      */
     protected $id;
 
+
     /**
      * @var string
-     *
-     * @ORM\Column(name="status", type="string", length=255)
+     * @ORM\Column(name="nom" , type="string")
+     * @Assert\NotBlank()
      */
-    private $status;
+    protected $nom;
+
+    /**
+     * @var string
+     * @ORM\Column(name="prenom" , type="string")
+     * @Assert\NotBlank()
+     */
+    protected $prenom;
+
+    /**
+     * @var string
+     * @ORM\Column(name="responsable" , type="string")
+     * @Assert\NotBlank()
+     */
+    protected $responsable;
+
+    /**
+     * @var string
+     * @ORM\Column(name="civilisation" , type="string")
+     * @Assert\NotBlank()
+     */
+    protected $civilisation;
+
+
+    /**
+     * @var string
+     * @ORM\Column(name="telephone" , type="string")
+     * @Assert\Regex(pattern="/^^(0)[0-9]{9}$/", message="Numéro de téléphone non valide")
+     * @Assert\NotBlank()
+     */
+    protected $telephone;
+
+    /**
+     * @var string
+     * @ORM\Column(name="NomMagasin" , type="string")
+     * @Assert\NotBlank()
+     */
+    protected $nomMagasin;
+
+    /**
+     * @var string
+     * @ORM\Column(name="Adresse" , type="string")
+     * @Assert\NotBlank()
+     */
+    protected $adresse;
+
+    /**
+     * @var string
+     * @ORM\Column(name="CodePostal" , type="string")
+     * @Assert\NotBlank()
+     */
+    protected $codePostal;
+    /**
+     * @var string
+     * @ORM\Column(name="Ville" , type="string")
+     * @Assert\NotBlank()
+     */
+    protected $ville;
+    /**
+     * @var string
+     * @ORM\Column(name="TelMagasin" , type="string")
+     * @Assert\Regex(pattern="/^^(0)[0-9]{9}$/", message="Numéro de téléphone non valide")
+     * @Assert\NotBlank()
+     */
+    protected $telMagasin;
 
 
     /**
@@ -48,28 +115,245 @@ class Opticien extends User
         return $this->id;
     }
 
+
+
     /**
-     * Set status
+     * Set nom
      *
-     * @param string $status
+     * @param string $nom
      *
      * @return Opticien
      */
-    public function setStatus($status)
+    public function setNom($nom)
     {
-        $this->status = $status;
+        $this->nom = $nom;
 
         return $this;
     }
 
     /**
-     * Get status
+     * Get nom
      *
      * @return string
      */
-    public function getStatus()
+    public function getNom()
     {
-        return $this->status;
+        return $this->nom;
+    }
+
+    /**
+     * Set prenom
+     *
+     * @param string $prenom
+     *
+     * @return Opticien
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    /**
+     * Get prenom
+     *
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * Set responsable
+     *
+     * @param string $responsable
+     *
+     * @return Opticien
+     */
+    public function setResponsable($responsable)
+    {
+        $this->responsable = $responsable;
+
+        return $this;
+    }
+
+    /**
+     * Get responsable
+     *
+     * @return string
+     */
+    public function getResponsable()
+    {
+        return $this->responsable;
+    }
+
+    /**
+     * Set civilisation
+     *
+     * @param string $civilisation
+     *
+     * @return Opticien
+     */
+    public function setCivilisation($civilisation)
+    {
+        $this->civilisation = $civilisation;
+
+        return $this;
+    }
+
+    /**
+     * Get civilisation
+     *
+     * @return string
+     */
+    public function getCivilisation()
+    {
+        return $this->civilisation;
+    }
+
+    /**
+     * Set telephone
+     *
+     * @param string $telephone
+     *
+     * @return Opticien
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * Get telephone
+     *
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * Set nomMagasin
+     *
+     * @param string $nomMagasin
+     *
+     * @return Opticien
+     */
+    public function setNomMagasin($nomMagasin)
+    {
+        $this->nomMagasin = $nomMagasin;
+
+        return $this;
+    }
+
+    /**
+     * Get nomMagasin
+     *
+     * @return string
+     */
+    public function getNomMagasin()
+    {
+        return $this->nomMagasin;
+    }
+
+    /**
+     * Set adresse
+     *
+     * @param string $adresse
+     *
+     * @return Opticien
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    /**
+     * Get adresse
+     *
+     * @return string
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * Set codePostal
+     *
+     * @param string $codePostal
+     *
+     * @return Opticien
+     */
+    public function setCodePostal($codePostal)
+    {
+        $this->codePostal = $codePostal;
+
+        return $this;
+    }
+
+    /**
+     * Get codePostal
+     *
+     * @return string
+     */
+    public function getCodePostal()
+    {
+        return $this->codePostal;
+    }
+
+    /**
+     * Set ville
+     *
+     * @param string $ville
+     *
+     * @return Opticien
+     */
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    /**
+     * Get ville
+     *
+     * @return string
+     */
+    public function getVille()
+    {
+        return $this->ville;
+    }
+
+    /**
+     * Set telMagasin
+     *
+     * @param string $telMagasin
+     *
+     * @return Opticien
+     */
+    public function setTelMagasin($telMagasin)
+    {
+        $this->telMagasin = $telMagasin;
+
+        return $this;
+    }
+
+    /**
+     * Get telMagasin
+     *
+     * @return string
+     */
+    public function getTelMagasin()
+    {
+        return $this->telMagasin;
     }
 }
-

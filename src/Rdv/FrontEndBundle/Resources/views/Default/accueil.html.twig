@@ -7,21 +7,20 @@
 <a href="{{ path('fos_user_security_logout') }}">
     {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
 </a>
+{% endif %}
 
 {% if is_granted('ROLE_OPTICIEN') %}
     OPTICIEN
+{% elseif is_granted('ROLE_PATIENT')%}
+    PATIENT
+{% elseif is_granted('ROLE_PROFESSIONNEL') %}
+    PROFESSIONNEL
 {% else %}
-    {% if is_granted('ROLE_PATIENT') %}
-        PATIENT
-    {% elseif is_granted('ROLE_PROFESSIONNEL') %}
-        PROFESSIONNEL
-    {% endif %}
-{% else %}
-    <a href="{{ path('rdv_front_end_patient') }}">Patient</a><br>
+<a href="{{ path('rdv_front_end_patient') }}">Patient</a><br>
 
-    <a href="{{ path('rdv_front_end_opticien') }}">Opticien</a><br>
+<a href="{{ path('rdv_front_end_opticien') }}">Opticien</a><br>
 
-    <a href="{{ path('rdv_front_end_professionnel') }}">professionnel</a><br>
+<a href="{{ path('rdv_front_end_professionnel') }}">professionnel</a><br>
 {% endif %}
 
 </body>

@@ -1,0 +1,38 @@
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    {% if error %}
+
+        <div class="alert alert-danger fade in">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+   <centre>
+    <form action="{{ path("fos_user_security_check") }}" method="post">
+
+        {% if csrf_token %}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        {% endif %}
+        <div class="form-group col-xs-12 col-sm-6" >
+            <label for="username">Email</label>
+            <input type="text" class="form-control" id="username" name="_username" placeholder="Email" required="required" />
+        </div>
+        <div class="form-group col-xs-12 col-sm-6" >
+            <label for="password">Mot de passe</label>
+            <input type="password" placeholder="Mot de passe" class="form-control" id="password" name="_password" required="required" />
+        </div>
+        <div class="form-group col-xs-12 col-sm-6" >
+            <a href="#">Mot de passe oublié ?</a>
+        </div>
+        <div class="form-group col-xs-12 col-sm-6" >
+            <a href="#">Votre email / numéro de téléphone portable a changé ?</a>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-md-push-6" >
+                <input type="submit" class="btn btn-success form-control" id="_submit" name="_submit" value="Connexion" />
+            </div>
+        </div>
+
+
+    </form>
+   
+{% endblock fos_user_content %}

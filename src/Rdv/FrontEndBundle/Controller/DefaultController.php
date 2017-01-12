@@ -23,8 +23,8 @@ class DefaultController extends Controller
 
         $message = \Swift_Message::newInstance()
             ->setSubject('Hello Email')
-            ->setFrom('htm.serrakh@gmail.com')
-            ->setTo('htm.serrakh@gmail.com')
+            ->setFrom('site@gmail.com')
+            ->setTo('moussaoui.tarik.2015@gmail.com')
             ->setBody(
                 $this->renderView(
                     '@RdvFrontEnd/Emails/registration.html.twig',
@@ -39,13 +39,11 @@ class DefaultController extends Controller
 
     public function opticienAction(Request $request)
     {
-
+        $utilisateur = "opticien" ;
         // login *******************************************************
-
         /* @var $request \Symfony\Component\HttpFoundation\Request */
         $session = $request->getSession();
         /* @var $session \Symfony\Component\HttpFoundation\Session\Session */
-
         // get the error if any (works with forward and redirect -- see below)
         if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
             $error = $request->attributes->get(SecurityContext::AUTHENTICATION_ERROR);
@@ -55,7 +53,6 @@ class DefaultController extends Controller
         } else {
             $error = '';
         }
-
         if ($error) {
             // TODO: this is a potential security risk (see http://trac.symfony-project.org/ticket/9523)
             $error = $error->getMessage();
@@ -66,31 +63,76 @@ class DefaultController extends Controller
         $csrfToken = $this->container->get('form.csrf_provider')->generateCsrfToken('authenticate');
 
         // inscription *******************************************************************************
+
         $em = $this->getDoctrine()->getEntityManager();
         $opticien = new Opticien();
         $form = $this->createForm(new OpticienType(), $opticien);
         $form->handleRequest($request);
-        if ($form->isValid()) {
-            $opticien->addRole('ROLE_OPTICIEN');
-            $opticien->setEnabled(true);
-            $em->persist($opticien);
-            $em->flush();
-            $route = 'rdv_front_end_test';
-            $this->addFlash(
-                'userep',
-                'votre compte à éte bien céer!'
-            );
-            $url = $this->container->get('router')->generate($route);
-            $response = new RedirectResponse($url);
-            $this->authenticateUser($opticien, $response);
-            return $response;
-        }
+        $user = $this->get('fos_user.user_manager')->findUserByEmail($opticien->getEmail()); //Verification d'email si exist
+        if (null==$user) {
+            if ($form->isValid()) {
+                $opticien->addRole('ROLE_OPTICIEN');
+                $opticien->setEnabled(true);
+                $em->persist($opticien);
+                $em->flush();
+                $route = 'rdv_front_end_test';
+                $this->addFlash(
+                    'userep',
+                    'votre compte à éte bien céer!'
+                );
+                $url = $this->container->get('router')->generate($route);
+                $response = new RedirectResponse($url);
+                $this->authenticateUser($opticien, $response);
+                return $response;
+            }
+        }else
+        {
+            $js = '<script  type="text/javascript">'.
+                'function tab(){'.
+                '$(\'#inscrire-nav\').addClass(\'active\').siblings().removeClass(\'active\');'.
+                '$(\'#inscrire\').addClass(\'active\').siblings().removeClass(\'active\');'.
+                '}'.
+                'window.onload = tab;'.
+                '</script>';
 
-        return $this->render('@RdvFrontEnd/Default/opticien.html.twig', [
+            $msg_erreur="Cette adresse email est déjà utilisée !";
+            return $this->render('@RdvFrontEnd/Default/login_register.html.twig', [
+                'form' => $form->createView(),
+                'last_username' => $lastUsername,
+                'error' => $error,
+                'csrf_token' => $csrfToken,
+                'utilisateur' => $utilisateur,
+                'js'=>$js,
+                'msg_erreur'=>$msg_erreur,
+            ]);
+
+
+        }
+        $string = (string) $form->getErrors(true, false);
+        if($string)
+        { $js = '<script  type="text/javascript">'.
+            'function tab(){'.
+            '$(\'#inscrire-nav\').addClass(\'active\').siblings().removeClass(\'active\');'.
+            '$(\'#inscrire\').addClass(\'active\').siblings().removeClass(\'active\');'.
+            '}'.
+            'window.onload = tab;'.
+            '</script>';
+
+            return $this->render('@RdvFrontEnd/Default/login_register.html.twig', [
+                'form' => $form->createView(),
+                'last_username' => $lastUsername,
+                'error' => $error,
+                'csrf_token' => $csrfToken,
+                'utilisateur' => $utilisateur,
+                'js'=>$js,
+            ]);
+        }
+        return $this->render('@RdvFrontEnd/Default/login_register.html.twig', [
             'form' => $form->createView(),
             'last_username' => $lastUsername,
             'error' => $error,
             'csrf_token' => $csrfToken,
+            'utilisateur' => $utilisateur,
         ]);
     }
 
@@ -98,7 +140,7 @@ class DefaultController extends Controller
     {
 
         // login *******************************************************
-
+        $utilisateur = "patient" ;
         /* @var $request \Symfony\Component\HttpFoundation\Request */
         $session = $request->getSession();
         /* @var $session \Symfony\Component\HttpFoundation\Session\Session */
@@ -123,33 +165,77 @@ class DefaultController extends Controller
         $csrfToken = $this->container->get('form.csrf_provider')->generateCsrfToken('authenticate');
 
         // inscription *******************************************************************************
+
         $em = $this->getDoctrine()->getEntityManager();
         $patient = new Patient();
         $form = $this->createForm(new PatientType(), $patient);
         $form->handleRequest($request);
-        if ($form->isValid()) {
-            $patient->addRole('ROLE_PATIENT');
-            $patient->setEnabled(true);
-            $em->persist($patient);
-            $em->flush();
-            $route = 'rdv_front_end_test';
-            $this->addFlash(
-                'userep',
-                'votre compte à éte bien céer!'
-            );
-            $url = $this->container->get('router')->generate($route);
-            $response = new RedirectResponse($url);
-            $this->authenticateUser($patient, $response);
-            return $response;
-        }
+        $user = $this->get('fos_user.user_manager')->findUserByEmail($patient->getEmail()); //Verification d'email si exist
+        if (null==$user) {
+            if ($form->isValid()) {
+                $patient->addRole('ROLE_PATIENT');
+                $patient->setEnabled(true);
+                $em->persist($patient);
+                $em->flush();
+                $route = 'rdv_front_end_test';
+                $this->addFlash(
+                    'userep',
+                    'votre compte à éte bien céer!'
+                );
+                $url = $this->container->get('router')->generate($route);
+                $response = new RedirectResponse($url);
+                $this->authenticateUser($patient, $response);
+                return $response;
+            }
+        }else
+        {
+             $js = '<script  type="text/javascript">'.
+                'function tab(){'.
+                '$(\'#inscrire-nav\').addClass(\'active\').siblings().removeClass(\'active\');'.
+                '$(\'#inscrire\').addClass(\'active\').siblings().removeClass(\'active\');'.
+                '}'.
+                'window.onload = tab;'.
+                '</script>';
 
-        return $this->render('@RdvFrontEnd/Default/patient.html.twig', [
+                $msg_erreur="Cette adresse email est déjà utilisée !";
+                return $this->render('@RdvFrontEnd/Default/login_register.html.twig', [
+                    'form' => $form->createView(),
+                    'last_username' => $lastUsername,
+                    'error' => $error,
+                    'csrf_token' => $csrfToken,
+                    'utilisateur' => $utilisateur,
+                    'js'=>$js,
+                    'msg_erreur'=>$msg_erreur,
+                ]);
+
+
+        }
+        $string = (string) $form->getErrors(true, false);
+        if($string)
+        { $js = '<script  type="text/javascript">'.
+            'function tab(){'.
+            '$(\'#inscrire-nav\').addClass(\'active\').siblings().removeClass(\'active\');'.
+            '$(\'#inscrire\').addClass(\'active\').siblings().removeClass(\'active\');'.
+            '}'.
+            'window.onload = tab;'.
+            '</script>';
+
+            return $this->render('@RdvFrontEnd/Default/login_register.html.twig', [
+                'form' => $form->createView(),
+                'last_username' => $lastUsername,
+                'error' => $error,
+                'csrf_token' => $csrfToken,
+                'utilisateur' => $utilisateur,
+                'js'=>$js,
+            ]);
+        }
+        return $this->render('@RdvFrontEnd/Default/login_register.html.twig', [
             'form' => $form->createView(),
             'last_username' => $lastUsername,
             'error' => $error,
             'csrf_token' => $csrfToken,
+            'utilisateur' => $utilisateur,
         ]);
-
     }
 
     public function professionelAction(Request $request)
@@ -202,8 +288,46 @@ class DefaultController extends Controller
             return $response;
         }
 
-        return $this->render('@RdvFrontEnd/Default/professionnel.html.twig', [
+        $utilisateur = "professionnel" ;
+        return $this->render('@RdvFrontEnd/Default/login_register.html.twig', [
             'form' => $form->createView(),
+            'last_username' => $lastUsername,
+            'error' => $error,
+            'csrf_token' => $csrfToken,
+            'utilisateur' => $utilisateur,
+        ]);
+
+    }
+
+
+    public function loginAction(Request $request)
+    {
+        // login *******************************************************
+
+        /* @var $request \Symfony\Component\HttpFoundation\Request */
+        $session = $request->getSession();
+        /* @var $session \Symfony\Component\HttpFoundation\Session\Session */
+
+        // get the error if any (works with forward and redirect -- see below)
+        if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
+            $error = $request->attributes->get(SecurityContext::AUTHENTICATION_ERROR);
+        } elseif (null !== $session && $session->has(SecurityContext::AUTHENTICATION_ERROR)) {
+            $error = $session->get(SecurityContext::AUTHENTICATION_ERROR);
+            $session->remove(SecurityContext::AUTHENTICATION_ERROR);
+        } else {
+            $error = '';
+        }
+
+        if ($error) {
+            // TODO: this is a potential security risk (see http://trac.symfony-project.org/ticket/9523)
+            $error = $error->getMessage();
+        }
+        // last username entered by the user
+        $lastUsername = (null === $session) ? '' : $session->get(SecurityContext::LAST_USERNAME);
+
+        $csrfToken = $this->container->get('form.csrf_provider')->generateCsrfToken('authenticate');
+
+        return $this->render('@RdvFrontEnd/Default/login.html.twig', [
             'last_username' => $lastUsername,
             'error' => $error,
             'csrf_token' => $csrfToken,

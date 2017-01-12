@@ -6,7 +6,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: fr
 
 framework:
     #esi:             ~
@@ -17,7 +17,7 @@ framework:
         strict_requirements: ~
     form:            ~
     csrf_protection: ~
-    validation:      { enable_annotations: true }
+    validation:      { enabled: true, enable_annotations: true  }
     #serializer:      { enable_annotations: true }
     templating:
         engines: ['twig']
@@ -32,8 +32,11 @@ framework:
 
 # Twig Configuration
 twig:
+    globals:
+        fos_csrf_provider: "@form.csrf_provider"
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form_themes: ['bootstrap_3_layout.html.twig']
 
 # Doctrine Configuration
 doctrine:
@@ -63,8 +66,6 @@ swiftmailer:
     host:      "%mailer_host%"
     username:  "%mailer_user%"
     password:  "%mailer_password%"
-    encryption: ssl
-    auth_mode: login
     spool:     { type: memory }
 
 #FOS
@@ -72,3 +73,9 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: Rdv\FrontEndBundle\Entity\User
+    registration:
+        confirmation:
+            enabled: true
+    from_email:
+            address: mail@domain.tld
+            sender_name: name
