@@ -1,0 +1,69 @@
+{% extends "::base.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{% block header %} {{ parent() }} {% endblock %}
+
+{% block body %}
+    <div class="div-center">
+        <div class="titre-text">
+
+                <h3>
+                    Connectez-vous et accédez à votre Espace
+                </h3>
+
+
+        </div>
+        <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active">
+                <a data-target="#connecter" data-toggle="tab">Se connecter</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="connecter"><form action="{{ path("fos_user_security_check") }}" method="post">
+                    {% if csrf_token %}
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                    {% endif %}
+                    <div class="form-group col-xs-12 text-center" >
+                    {% if error %}
+                        <div class="alert alert-danger">
+                            <strong>L'adresse e-mail ou le mot de passe que vous avez entré n'est pas valide !</strong>
+                        </div>
+                    {% endif %}
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6" >
+                    <label for="username">Email</label>
+                    <input type="text" class="form-control" id="username" name="_username" placeholder="Email" required="required" />
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6" >
+                    <label for="password">Mot de passe</label>
+                    <input type="password" placeholder="Mot de passe" class="form-control" id="password" name="_password" required="required" />
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6" >
+                        <a href="#">Mot de passe oublié ?</a>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6" >
+                        <a href="#">Votre email / numéro de téléphone portable a changé ?</a>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-4 col-md-push-6" >
+                    <input type="submit" class="btn btn-success form-control" id="_submit" name="_submit" value="Connexion" />
+                    </div>
+                    </div>
+
+                </form></div>
+        </div>
+
+        </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+{% block footer %} {{ parent() }} {% endblock %}
+
+
+

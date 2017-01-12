@@ -1,37 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9fb101b5-e1c6-486b-91c8-a4ce2e5489d1" name="Default" comment="Add Template(asset)">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/Resources/translations/FOSUserBundle.fr.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/Resources/translations/validators.fr.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/Resources/views/Security/login.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/Resources/views/layout.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/views/Default/login_register.html.twig" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/views/Default/opticien.html.twig" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/RDVOphtalmo.iml" afterPath="$PROJECT_DIR$/.idea/RDVOphtalmo.iml" />
+    <list default="true" id="9fb101b5-e1c6-486b-91c8-a4ce2e5489d1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config_dev.yml" afterPath="$PROJECT_DIR$/app/config/config_dev.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Entity/Opticien.php" afterPath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Entity/Opticien.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Entity/Patient.php" afterPath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Entity/Patient.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Entity/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Form/OpticienType.php" afterPath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Form/OpticienType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Form/PatientType.php" afterPath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Form/PatientType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/config/routing/profile.yml" afterPath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/config/routing/profile.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/config/routing/security.yml" afterPath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/config/routing/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/views/Default/accueil.html.twig" afterPath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/views/Default/accueil.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/views/Default/template.html.twig" afterPath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/views/Default/template.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/views/Resetting/request_content.html.twig" afterPath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/views/Resetting/request_content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/views/Resetting/reset.html.twig" afterPath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/views/Resetting/reset.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/views/Security/login_content.html.twig" afterPath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/views/Security/login_content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/Rdv/FrontEndBundle/Resources/views/layout.html.twig" />
     </list>
     <list id="e55a78bb-9df6-4046-9608-f7b0c36b2847" name="Rejected commit: Default" comment="first commit" />
     <ignored path="RDVOphtalmo.iws" />
@@ -120,7 +91,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
               <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-              <folding />
+              <folding>
+                <marker date="1484216933553" expanded="true" signature="49:917" ph="{% block fos_user_content ...%}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,8 +101,8 @@
       <file leaf-file-name="ChangePasswordFormType.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Form/Type/ChangePasswordFormType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="65" column="7" lean-forward="true" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
+            <state relative-caret-position="440">
+              <caret line="64" column="20" lean-forward="true" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -338,6 +311,86 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="RDVOphtalmo" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RDVOphtalmo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RDVOphtalmo" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RDVOphtalmo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RDVOphtalmo" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rdvfrontend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RDVOphtalmo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RDVOphtalmo" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rdvfrontend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RDVOphtalmo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RDVOphtalmo" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bundles" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -672,7 +725,7 @@
       <workItem from="1483713383703" duration="7756000" />
       <workItem from="1483973402288" duration="1672000" />
       <workItem from="1484134976180" duration="2572000" />
-      <workItem from="1484148091875" duration="5877000" />
+      <workItem from="1484148091875" duration="6537000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1477324678256</created>
@@ -695,11 +748,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477565740186</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add Template(asset)">
+      <created>1484221489765</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1484221489765</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180972000" />
+    <option name="totallyTimeSpent" value="181632000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -711,10 +771,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1924" height="1060" extended-state="0" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1924" height="1060" extended-state="1" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25703463" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25703463" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22234637" sideWeight="0.5032467" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1037,6 +1097,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1180,14 +1241,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-          <folding />
+          <folding>
+            <marker date="1484216933553" expanded="true" signature="49:917" ph="{% block fos_user_content ...%}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Form/Type/ChangePasswordFormType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="65" column="7" lean-forward="true" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
+        <state relative-caret-position="440">
+          <caret line="64" column="20" lean-forward="true" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
           <folding />
         </state>
       </provider>
